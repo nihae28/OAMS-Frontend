@@ -1,0 +1,10 @@
+.customTest {    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.centre {
+    display: flex;
+    justify-content: center;
+}
