@@ -14,6 +14,7 @@ import AddFAATestController from './components/AddFAATestController';
 import AddPlaneController from './components/AddPlaneController';
 import AddTcController from './components/AddTcController';
 import AddTechnicianController from './components/AddTechnicianController';
+import Techniciandetails from './components/Techniciandetails';
 
  
 // import {Route} from 'react-router-dom';
@@ -45,6 +46,7 @@ class App extends Component {
           <Route path = "/planes" component = {AddPlaneController}></Route>
           <Route path = "/trafficcontroller" component = {AddTcController}></Route>
           <Route path = "/technician" component = {AddTechnicianController}></Route>
+          <Route path = "/techniciandetails" component = {Techniciandetails}</Route>
 
        <FooterComponent />
           
