@@ -44,10 +44,9 @@ class App extends Component {
      <React.Fragment>  
        <BrowserRouter>
         <Routes>
-     <HeaderComponent />
+            <HeaderComponent />
           <Route path="user" element={<Test />} />
-          <Route path="login" element={<Login />} />
-            <Route path='traffic-controller/:ssn' element={<TrafficControllerWrapper/>}/>
+          <Route path="login" element={<Login />} /><Route path='traffic-controller/:ssn' element={<TrafficControllerWrapper/>}/>
           <Route path='trafficControllerExamDetails/:ssn' element={<TrafficControllerExamDetailsWrapper/>}/>
           <Route path='airplaneDetailsSearch/:ssn' element={<TrafficControllerAirplaneSearchWrapper/>}/>
           <Route path='traffic-controller' element={<TrafficController/>}/>
@@ -62,7 +61,7 @@ class App extends Component {
           <Route path = "/planes" component = {AddPlaneController}></Route>
           <Route path = "/trafficcontroller" component = {AddTcController}></Route>
           <Route path = "/technician" component = {AddTechnicianController}></Route>
-          <Route path = "/techniciandetails" component = {Techniciandetails}</Route>
+          <Route path = "/techniciandetails" component = {Techniciandetails}></Route>
 
        <FooterComponent />
 
