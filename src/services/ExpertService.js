@@ -5,7 +5,7 @@ const EXPERT_BASE_REST_API_URL = 'http://localhost:8080/Expert';
 class ExpertService{
 
     getAllExperts(){
-        return axios.get(EXPERT_BASE_REST_API_URLL+"/getexperts")
+        return axios.get(EXPERT_BASE_REST_API_URL+"/getexperts")
     }
 
     createExpert(Expert){
