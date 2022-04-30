@@ -4,8 +4,11 @@ import {FormControl, FormGroup, Button, Form} from 'react-bootstrap';
 
 export default class Login extends Component {
 
+
 		constructor() {
 			super();
+
+
 			this.state = {
 				adminLogin:false,
 				loginFields : {
@@ -133,9 +136,14 @@ export default class Login extends Component {
 				alert("Server responds with error!");
 			} else{
 				console.log("i am result"+res);
-				alert("Login successful");
+				return res.json()
 			}
 				
+		}).
+		then(async (response) => {
+			if (response.role.toLowerCase() === "traffic controller") {
+				window.location.href = `/traffic-controller/${response.ssn}`;
+			}
 		}).catch(error => {
 			console.error('Error during login:', error);
 		});

@@ -19,10 +19,10 @@ export default class TrafficControllerExamDetails extends Component {
         return yyyy + "-" + mm + "-" + dd;
     };
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
-            username: "123456787",
+            username: props.match.params.ssn,
             last_exam_date: null,
             recorded_date: null
         }
@@ -88,7 +88,7 @@ export default class TrafficControllerExamDetails extends Component {
                 this.setState({
                     recorded_date: data.exam_date.split('T')[0]
                 });
-                window.open("/traffic-controller","_self")
+                window.open(`/traffic-controller/${this.props.match.params.ssn}`,"_self")
             });
     }
 }
