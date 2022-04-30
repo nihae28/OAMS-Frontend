@@ -11,12 +11,12 @@ export default class TrafficController extends Component {
         return (
             <div>
                 <div class="centre">
-                <h6>Test Controller Interface</h6>
+                <h6>Traffic Controller Interface</h6>
                 </div>
                 <div class="centre">
                     <a href="/trafficControllerExamDetails" style={{marginRight: 5 + 'em'}}>
                         <button>
-                            Test Controller Exam Details
+                            Traffic Controller Exam Details
                         </button>
                     </a>
                     <a href="/airplaneDetailsSearch">
