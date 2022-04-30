@@ -5,7 +5,7 @@ const MODEL_BASE_REST_API_URL = 'http://localhost:8080/airplane_models';
 class AirplaneModelService{
 
     getAllModels(){
-        return axios.get(MODEL_BASE_REST_API_URLL+"/getmodels")
+        return axios.get(MODEL_BASE_REST_API_URL+"/getmodels")
     }
 
     createModel(airplanemodel){
