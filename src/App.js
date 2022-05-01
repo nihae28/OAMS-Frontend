@@ -52,6 +52,7 @@ class App extends Component {
           <Route path='trafficControllerExamDetails/:ssn' element={<TrafficControllerExamDetailsWrapper/>}/>
           <Route path='airplaneDetailsSearch/:ssn' element={<TrafficControllerAirplaneSearchWrapper/>}/>
           <Route path = 'techniciandetails/:ssn' element={<TechnicianWrapper/>}/>
+          <Route path = 'techniciandetails' element = {<Techniciandetails/>}>
           <Route path='traffic-controller' element={<TrafficController/>}/>
           <Route path='trafficControllerExamDetails' element={<TrafficControllerExamDetails/>}/>
           <Route path='airplaneDetailsSearch' element={<TrafficControllerAirplaneSearch/>}/>
@@ -61,7 +62,6 @@ class App extends Component {
           <Route path = "/experts" component = {AddExpertController}></Route>
           <Route path = "/faatests" component = {AddFAATestController}></Route>
           <Route path = "/planes" component = {AddPlaneController}></Route>
-          <Route path = '/techniciandetails' element = {<Techniciandetails/>}></Route>
         </Routes>
            <FooterComponent />
       </BrowserRouter>,
