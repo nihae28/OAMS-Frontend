@@ -26,7 +26,10 @@ import Login from './Login';
 class App extends Component {
 
   render() {
-
+      const TechnicianWrapper = (props) => {
+          const params = useParams();
+          return <Techniciandetails {...{...props, match: {params}} } />
+      }
       const TrafficControllerWrapper = (props) => {
           const params = useParams();
           return <TrafficController {...{...props, match: {params}} } />
