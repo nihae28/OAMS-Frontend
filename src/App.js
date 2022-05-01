@@ -13,7 +13,7 @@ import AddExpertController from './components/AddExpertController';
 import AddFAATestController from './components/AddFAATestController';
 import AddPlaneController from './components/AddPlaneController';
 
-import Techniciandetails from './components/Techniciandetails';
+import Techniciandetails from './Techniciandetails';
 
 
 // import {Route} from 'react-router-dom';
