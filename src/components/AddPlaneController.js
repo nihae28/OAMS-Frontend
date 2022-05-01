@@ -35,7 +35,7 @@ const AddPlaneController = () => {
     }, [])
 
     const getAllPlanes = () => {
-        FAATestService.getAllPlanes().then((response) => {
+        PlaneService.getAllPlanes().then((response) => {
             setPlane(response.data)
             console.log(response.data);
         }).catch(error =>{
