@@ -1,9 +1,10 @@
 import React, {useState, useEffect} from 'react'
-import {Link, useHistory, useParams } from 'react-router-dom';
+
 import EmployeeService from '../services/EmployeeService'
 
 const AddEmployeeComponent = () => {
 
+    const [Ssn, setSsn] = useState('')
     const [Email, setEmail] = useState('')
     const [EName, setEName] = useState('')
     const [Address, setAddress] = useState('')
@@ -11,59 +12,59 @@ const AddEmployeeComponent = () => {
     const [Union_mem_no, setUnionNo] = useState('')
     const [Phone_no, setPhoneNo] = useState('')
     const [ERole, setERole] = useState('')
-    const history = useHistory();
-    const {Ssn} = useParams();
 
-    const saveOrUpdateEmployee = (e) => {
+    const [employee, setEmployee] = useState([])
+    
+
+    const saveEmployee = (e) => {
         e.preventDefault();
 
-        const employee = {Email, EName, Address, Salary, Union_mem_no, Phone_no, ERole}
+        const employee = {Ssn,Email, EName, Address, Salary, Union_mem_no, Phone_no, ERole}
 
-        if(Ssn){
-            EmployeeService.updateEmployee(Ssn, employee).then((response) => {
-                history.push('/employees')
-            }).catch(error => {
-                console.log(error)
-            })
-
-        }else{
+     
             EmployeeService.createEmployee(employee).then((response) =>{
 
                 console.log(response.data)
+                getAllEmployees()
     
-                history.push('/employees');
+            
     
             }).catch(error => {
                 console.log(error)
             })
-        }
+        
         
     }
 
+    
     useEffect(() => {
 
-        EmployeeService.getEmployeeById(Ssn).then((response) =>{
-            setEmail(response.data.Email)
-            setEName(response.data.EName)
-            setAddress(response.data.Address)
-            setSalary(response.data.Salary)
-            setUnionNo(response.data.Union_mem_no)
-            setPhoneNo(response.data.Phone_no)
-            setERole(response.data.ERole)
-            
-        }).catch(error => {
-            console.log(error)
-        })
+        getAllEmployees();
     }, [])
+
+    const getAllEmployees = () => {
+        EmployeeService.getAllEmployees().then((response) => {
+            setEmployee(response.data)
+            console.log(response.data);
+        }).catch(error =>{
+            console.log(error);
+        })
+    }
 
     const title = () => {
 
-        if(id){
-            return <h2 className = "text-center">Update Employee</h2>
-        }else{
-            return <h2 className = "text-center">Add Employee</h2>
-        }
-    }
+       
+        return <h2 className = "text-center">Add new Employee</h2>
+  
+
+}
+const title2 = () => {
+
+   
+    return <h2 className = "text-center">The list of Employees </h2>
+
+
+}
 
     return (
         <div>
@@ -76,6 +77,18 @@ const AddEmployeeComponent = () => {
                        }
                         <div className = "card-body">
                             <form>
+                            <div className = "form-group mb-2">
+                                    <label className = "form-label"> SSN :</label>
+                                    <input
+                                        type = "text"
+                                        placeholder = "Enter SSN"
+                                        name = "SSN"
+                                        className = "form-control"
+                                        value = {Ssn}
+                                        onChange = {(e) => setSsn(e.target.value)}
+                                    >
+                                    </input>
+                                </div>
                             <div className = "form-group mb-2">
                                     <label className = "form-label"> Email :</label>
                                     <input
@@ -169,12 +182,57 @@ const AddEmployeeComponent = () => {
                                     </input>
                                 </div>
 
-                                <button className = "btn btn-success" onClick = {(e) => saveOrUpdateEmployee(e)} >Submit </button>
-                                <Link to="/employees" className="btn btn-danger"> Cancel </Link>
+                                <button className = "btn btn-success" onClick = {(e) => saveEmployee(e)} >Submit </button>
+                                
                             </form>
 
                         </div>
                     </div>
+                    <div className = "card col-md-6 offset-md-3 offset-md-3">
+                       {
+                           title2()
+                       }
+                       
+                        <div className = "card-body">
+                        <table className="table table-bordered table-striped">
+                                    <thead>
+                                        <tr>
+                                        
+                                        <th> SSN  </th>
+                                        <th> Email  </th>
+                                        <th> EName  </th>
+                                        <th> Address  </th>
+                                        <th> Salary  </th>
+                                        <th> Union No  </th>
+                                        <th> ERole  </th>
+                    
+                                       
+                                        </tr>
+                                        
+                                    </thead>
+                                    <tbody>
+                                        {
+                                            employee.map(
+                                                employee =>
+                                                <tr key = {employee.Ssn}> 
+                                                    <td> {employee.Ssn} </td>
+                                                    <td> {employee.Email} </td>
+                                                    <td> {employee.EName} </td>
+                                                    <td> {employee.Address} </td>
+                                                    <td> {employee.Salary} </td>
+                                                    <td> {employee.Union_mem_no} </td>
+                                                    <td> {employee.ERole} </td>
+                                                    
+                                                    
+                                                </tr>
+                                            )
+                                        }
+                                    </tbody>
+                        </table>
+                        </div>
+                        </div>
+
+
                 </div>
 
            </div>
