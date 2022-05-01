@@ -1,33 +1,41 @@
-import React, {useState, useEffect, Component} from 'react'
-import TechnicianService from '../services/TechnicianService';
+import React, { Component } from 'react'
 import './Techniciandetails.css';
 
 export default class Techniciandetails extends Component {
-  constructor() {
-      super();
+  constructor(props) {
+      super(props);
       this.state = {
       }
   }
 
 render(){
+    console.log(this.props.match.params.ssn)
     return (
       <div>
         <div class="centre">
                 <h6>Technician Interface</h6>
                 </div>
                 <div class="centre">
-                    <a href="/faatests" style={{marginRight: 5 + 'em'}}>
+                    <a onClick={this.navigateTofaaTests} style={{marginRight: 5 + 'em'}}>
                         <button>
-                            Test Details
+                            FAA TESTS
                         </button>
                     </a>
-                    <a href="/airplaneDetailsSearch">
+                    <a onClick={this.navigateToAirplaneSearch}>
                         <button>
                             Airplane Details
                         </button>
-                    </a>                    
+                    </a>                 
                 </div>
     </div>
     )
 }
+    navigateTofaaTests = (e) => {
+        e.preventDefault();
+        window.location.href = `/faatests/${this.props.match.params.ssn}`;
+    }
+    navigateToAirplaneSearch = (e) => {
+        e.preventDefault();
+        window.location.href = `/airplaneDetailsSearch/${this.props.match.params.ssn}`;
+    }
 }
