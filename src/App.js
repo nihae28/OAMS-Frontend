@@ -62,7 +62,7 @@ class App extends Component {
           <Route path = "/planes" component = {AddPlaneController}></Route>
           <Route path = "/trafficcontroller" component = {AddTcController}></Route>
           <Route path = "/technician" component = {AddTechnicianController}></Route>
-          <Route path = "/techniciandetails" component = {Techniciandetails}</Route>
+          <Route path = "/techniciandetails" component = {Techniciandetails}></Route>
 
        <FooterComponent />
 
