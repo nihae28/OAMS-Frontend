@@ -56,12 +56,12 @@ class App extends Component {
           <Route path='traffic-controller' element={<TrafficController/>}/>
           <Route path='trafficControllerExamDetails' element={<TrafficControllerExamDetails/>}/>
           <Route path='airplaneDetailsSearch' element={<TrafficControllerAirplaneSearch/>}/>
-          <Route path = "/add-employee" component = {AddEmployeeComponent} ></Route>
-          <Route path = "/edit-employee/:ssn" component = {AddEmployeeComponent}></Route>
-          <Route path = "/airplanemodels" component = {AddAirplaneModel}></Route>
-          <Route path = "/experts" component = {AddExpertController}></Route>
-          <Route path = "/faatests" component = {AddFAATestController}></Route>
-          <Route path = "/planes" component = {AddPlaneController}></Route>
+          <Route path = "/add-employee" elemeent = {<AddEmployeeComponent/>} ></Route>
+          <Route path = "/edit-employee/:ssn" element = {<AddEmployeeComponent/>}></Route>
+          <Route path = "/airplanemodels" element = {<AddAirplaneModel/>}></Route>
+          <Route path = "/experts" element = {<AddExpertController/>}></Route>
+          <Route path = "/faatests" element = {<AddFAATestController/>}></Route>
+          <Route path = "/planes" element = {<AddPlaneController/>}></Route>
         </Routes>
            <FooterComponent />
       </BrowserRouter>,
