@@ -60,8 +60,8 @@ class App extends Component {
           <Route path = "/experts" component = {AddExpertController}></Route>
           <Route path = "/faatests" component = {AddFAATestController}></Route>
           <Route path = "/planes" component = {AddPlaneController}></Route>
-
-          <Route path = "/techniciandetails" component = {Techniciandetails}></Route>
+          <Route path = 'techniciandetails/:ssn' element={<TechnicianWrapper/>}/>
+          <Route path = '/techniciandetails' element = {<Techniciandetails/>}></Route>
         </Routes>
            <FooterComponent />
       </BrowserRouter>,
