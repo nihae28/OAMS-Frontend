@@ -146,6 +146,8 @@ export default class Login extends Component {
 			}
 			else if (response.role.toLowerCase() === "technician") {
 				window.location.href = `/technician/${response.ssn}`;
+			} else if(response.role.toLowerCase() === 'admin') {
+				window.location.href = `/admin/${response.ssn}`;
 			}
 			else if (response.role.toLowerCase() === "admin") {
 				window.location.href = `/admin/${response.ssn}`;
@@ -154,6 +156,8 @@ export default class Login extends Component {
 			console.error('Error during login:', error);
 		});
 	}
+
+
 	//admin login handler
 	loginAdminHandler = e => {
 		e.preventDefault();
@@ -190,7 +194,9 @@ export default class Login extends Component {
 				alert("Server responds with error!");
 			} else{
 				console.log("i am result"+res);
-				alert("Login successful");
+				// alert("Login successful");
+
+				window.location.href = `/admin/${res.ssn}`;
 			}
 		}).catch(error => {
 			console.error('Error during login:', error);
