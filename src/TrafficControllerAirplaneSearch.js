@@ -80,8 +80,10 @@ export default class TrafficControllerAirplaneSearch extends React.Component {
         })
         .then((res) => res.json())
         .then((data) => {
+            console.log("hey");
             console.log(data);
             this.setState({planes : data});
+            console.log(data);
         })
     }
 }
