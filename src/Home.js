@@ -1,5 +1,5 @@
 import { Component } from "react";
-import './New.css';
+import './Home.css';
 export default class TrafficController extends Component {
 
     render() {
