@@ -145,13 +145,11 @@ export default class Login extends Component {
 				window.location.href = `/traffic-controller/${response.ssn}`;
 			}
 			else if (response.role.toLowerCase() === "technician") {
-				window.location.href = `/technician/${response.ssn}`;
+				window.location.href = `/techniciandetails/${response.ssn}`;
 			} else if(response.role.toLowerCase() === 'admin') {
 				window.location.href = `/admin/${response.ssn}`;
 			}
-			else if (response.role.toLowerCase() === "admin") {
-				window.location.href = `/admin/${response.ssn}`;
-			}
+			
 		}).catch(error => {
 			console.error('Error during login:', error);
 		});
