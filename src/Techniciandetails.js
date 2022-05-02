@@ -18,8 +18,8 @@ render(){
                 <div class="centre">
                     <a onClick={this.navigateTofaaTests} style={{marginRight: 5 + 'em'}}>
                         <button>
-                            FAA TESTS
-                        </button>
+                            TEST INFO                        
+                            </button>
                     </a>
                     <a onClick={this.navigateToAirplaneSearch}>
                         <button>
@@ -32,7 +32,7 @@ render(){
 }
     navigateTofaaTests = (e) => {
         e.preventDefault();
-        window.location.href = `/faatests/${this.props.match.params.ssn}`;
+        window.location.href = `/testinfo/`;
     }
     navigateToAirplaneSearch = (e) => {
         e.preventDefault();
