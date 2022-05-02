@@ -22,6 +22,7 @@ import Techniciandetails from './Techniciandetails';
 
 import Test from './Test';
 import Login from './Login';
+import Admin from './Admin';
 
 class App extends Component {
 
@@ -42,6 +43,10 @@ class App extends Component {
           const params = useParams();
           return <TrafficControllerAirplaneSearch {...{...props, match: {params}} } />
       }
+       const AdminWrapper = (props) => {
+        const params = useParams();
+        return <Admin {...{...props, match: {params}} } />
+    }
     return(
      <React.Fragment>  
        <BrowserRouter>
@@ -56,6 +61,8 @@ class App extends Component {
           <Route path='traffic-controller' element={<TrafficController/>}/>
           <Route path='trafficControllerExamDetails' element={<TrafficControllerExamDetails/>}/>
           <Route path='airplaneDetailsSearch' element={<TrafficControllerAirplaneSearch/>}/>
+          <Route path='admin' element={<Admin/>}/>
+          <Route path='admin/:ssn' element={<AdminWrapper/>}/>
           <Route path = "/add-employee" elemeent = {<AddEmployeeComponent/>} ></Route>
           <Route path = "/edit-employee/:ssn" element = {<AddEmployeeComponent/>}></Route>
           <Route path = "/airplanemodels" element = {<AddAirplaneModel/>}></Route>
