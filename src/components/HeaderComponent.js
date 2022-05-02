@@ -13,7 +13,7 @@ export default class HeaderComponent extends Component {
         auth.logout();
         window.location.href = "/login";
     }
-    logout(){
+    home(){
         auth.home();
         window.location.href = "/home";
     }
