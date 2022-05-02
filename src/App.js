@@ -48,22 +48,6 @@ class App extends Component {
         const params = useParams();
         return <Admin {...{...props, match: {params}} } />
     }
-       const AddAirplaneModelWrapper = (props) => {
-        const params = useParams();
-        return <AddAirplaneModel {...{...props, match: {params}} } />
-    }
-       const AddExpertControllerWrapper = (props) => {
-        const params = useParams();
-        return <AddExpertController {...{...props, match: {params}} } />
-    }
-       const AddFAATestControllerWrapper = (props) => {
-        const params = useParams();
-        return <AddFAATestController {...{...props, match: {params}} } />
-    }
-       const AddPlaneControllerWrapper = (props) => {
-        const params = useParams();
-        return <AddPlaneController {...{...props, match: {params}} } />
-    }
     return(
      <React.Fragment>  
        <BrowserRouter>
@@ -83,15 +67,10 @@ class App extends Component {
           <Route path='admin' element={<Admin/>}/>
           <Route path='admin/:ssn' element={<AdminWrapper/>}/>
           <Route path = "/add-employee" element = {<AddEmployeeComponent/>} ></Route>
-          <Route path = "/add-employee/:ssn" element = {<AddEmployeeComponent/>}></Route>
           <Route path = "/airplanemodels" element = {<AddAirplaneModel/>}></Route>
           <Route path = "/experts" element = {<AddExpertController/>}></Route>
           <Route path = "/faatests" element = {<AddFAATestController/>}></Route>
           <Route path = "/planes" element = {<AddPlaneController/>}></Route>
-          <Route path = "/airplanemodels/:ssn" element = {<AddAirplaneModelWrapper/>}></Route>
-          <Route path = "/experts/:ssn" element = {<AddExpertControllerWrapper/>}></Route>
-          <Route path = "/faatests/:ssn" element = {<AddFAATestControllerWrapper/>}></Route>
-          <Route path = "/planes/:ssn" element = {<AddPlaneControllerWrapper/>}></Route>
           <Route path = "/testinfo/" element = {<Test_info/>}></Route>
           <Route path="/" element={<Login />} />
         </Routes>
