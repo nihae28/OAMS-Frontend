@@ -3,7 +3,7 @@ import Auth from '../services/Auth';
 
 let auth = new Auth();
 
-export default class Navbar extends Component {
+export default class HeaderComponent extends Component {
 
     constructor(){
         super();
