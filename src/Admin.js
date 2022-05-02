@@ -46,23 +46,23 @@ export default class Admin extends Component {
     }
     navigateToAirplaneModel = (e) => {
         e.preventDefault();
-        window.location.href = `/airplane_models/${this.props.match.params.ssn}`;
+        window.location.href = `/airplane_models`;
     }
     navigateToAddPlane = (e) => {
         e.preventDefault();
-        window.location.href = `/planes/${this.props.match.params.ssn}`;
+        window.location.href = `/planes`;
     }
     navigateToAddEmployee = (e) => {
         e.preventDefault();
-        window.location.href = `/add-employee/${this.props.match.params.ssn}`;
+        window.location.href = `/add-employee`;
     }
     navigateToAddExpert = (e) => {
         e.preventDefault();
-        window.location.href = `/Expert/${this.props.match.params.ssn}`;
+        window.location.href = `/Expert`;
     }
     navigateToAddFAATest = (e) => {
         e.preventDefault();
-        window.location.href = `/faatests/${this.props.match.params.ssn}`;
+        window.location.href = `/faatests`;
     }
 
 }
