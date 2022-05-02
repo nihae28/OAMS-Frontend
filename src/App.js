@@ -62,6 +62,7 @@ class App extends Component {
           <Route path = "/experts" element = {<AddExpertController/>}></Route>
           <Route path = "/faatests" element = {<AddFAATestController/>}></Route>
           <Route path = "/planes" element = {<AddPlaneController/>}></Route>
+          <Route path="/" element={<Login />} />
         </Routes>
            <FooterComponent />
       </BrowserRouter>,

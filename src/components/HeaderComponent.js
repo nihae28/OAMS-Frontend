@@ -10,7 +10,6 @@ const HeaderComponent = () => {
                             Online Airport Management
                         </a>
                     </div>
-
                 </nav>
             </header>
         </div>
