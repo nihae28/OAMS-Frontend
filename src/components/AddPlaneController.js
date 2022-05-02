@@ -4,8 +4,8 @@ import PlaneService from '../services/PlaneService'
 
 const AddPlaneController = () => {
 
-    const [Reg_no, setRegNo] = useState('')
-    const [Model_no, setModelNo] = useState('')
+    const [regNo, setRegNo] = useState('')
+    const [modelNo, setModelNo] = useState('')
 
     const [plane, setPlane] = useState([])
     
@@ -14,7 +14,7 @@ const AddPlaneController = () => {
     const savePlane = (e) => {
         e.preventDefault();
 
-        const plane = {Reg_no, Model_no}
+        const plane = {regNo, modelNo}
 
         
             PlaneService.createPlane(plane).then((response) =>{
@@ -74,9 +74,9 @@ const title2 = () => {
                                     <input
                                         type = "text"
                                         placeholder = "Enter Modle No"
-                                        name = "Reg_no"
+                                        name = "regNo"
                                         className = "form-control"
-                                        value = {Reg_no}
+                                        value = {regNo}
                                         onChange = {(e) => setRegNo(e.target.value)}
                                     >
                                     </input>
@@ -87,9 +87,9 @@ const title2 = () => {
                                     <input
                                         type = "text"
                                         placeholder = "Enter Model No"
-                                        name = "Model_no"
+                                        name = "modelNo"
                                         className = "form-control"
-                                        value = {Model_no}
+                                        value = {modelNo}
                                         onChange = {(e) => setModelNo(e.target.value)}
                                     >
                                     </input>
@@ -126,9 +126,9 @@ const title2 = () => {
                                         {
                                             plane.map(
                                                 plane =>
-                                                <tr key = {plane.Reg_no}> 
-                                                    <td> {plane.Reg_no} </td>
-                                                    <td> {plane.Model_no} </td>
+                                                <tr key = {plane.regNo}> 
+                                                    <td> {plane.regNo} </td>
+                                                    <td> {plane.modelNo} </td>
                                             
                                                 
                                                     

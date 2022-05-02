@@ -3,7 +3,7 @@ import AirplaneModelService from '../services/AirplaneModelService'
 
 const AddAirplaneModel = () => {
 
-    const [Model_no, setModelNo] = useState('')
+    const [modelNo, setModelNo] = useState('')
     const [capacity, setCapacity] = useState('')
     const [weight, setWeight] = useState('')
     
@@ -12,12 +12,13 @@ const AddAirplaneModel = () => {
     const saveModel = (e) => {
         e.preventDefault();
 
-        const airplanemodel = {Model_no, capacity, weight}
+        const airplanemodel = {modelNo, capacity, weight}
 
         
         AirplaneModelService.createModel(airplanemodel).then((response) =>{
 
-            alert("Data added succesfully");
+//            alert("Data added succesfully");
+            console.log("i addded model");
             console.log(response.data)
             getAllModels()
 
@@ -72,11 +73,11 @@ const title2 = () => {
                             <div className = "form-group mb-2">
                                     <label className = "form-label"> Modle No :</label>
                                     <input
-                                        type = "email"
+                                        type = "text"
                                         placeholder = "Enter Modle No"
-                                        name = "Model_no"
+                                        name = "modelNo"
                                         className = "form-control"
-                                        value = {Model_no}
+                                        value = {modelNo}
                                         onChange = {(e) => setModelNo(e.target.value)}
                                     >
                                     </input>
@@ -137,8 +138,8 @@ const title2 = () => {
                                         {
                                             model.map(
                                                 model =>
-                                                <tr key = {model.Model_no}> 
-                                                    <td> {model.Model_no} </td>
+                                                <tr key = {model.modelNo}> 
+                                                    <td> {model.modelNo} </td>
                                                     <td> {model.capacity} </td>
                                                     <td>{model.weight}</td>
                                                     

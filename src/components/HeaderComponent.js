@@ -13,10 +13,6 @@ export default class HeaderComponent extends Component {
         auth.logout();
         window.location.href = "/login";
     }
-    logout(){
-        auth.home();
-        window.location.href = "/home";
-    }
 
 render() {
     return (
@@ -27,10 +23,6 @@ render() {
                         <a href = "#" className = "navbar-brand">
                             Online Airport Management
                         </a>
-                        <button onClick={this.home } className="ml-auto nav-link">         
-                        Home
-                        </button>
-
                          <button onClick={this.logout } className="ml-auto nav-link">         
                         logout
                         </button>

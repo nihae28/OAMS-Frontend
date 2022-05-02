@@ -2,7 +2,6 @@ import React, { Component, } from 'react';
 import {Route, Routes, BrowserRouter, useParams} from 'react-router-dom';
 import '.././node_modules/bootstrap/dist/css/bootstrap.min.css';
 import TrafficController from './TrafficController';
-import Home from './Home';
 import TrafficControllerExamDetails from './TrafficControllerExamDetails';
 import TrafficControllerAirplaneSearch from './TrafficControllerAirplaneSearch';
 import FooterComponent from './components/FooterComponent';
@@ -69,7 +68,6 @@ class App extends Component {
        <BrowserRouter>
            <HeaderComponent />
         <Routes>
-          <Route path="home" element={<Home />} />
           <Route path="user" element={<Test />} />
           <Route path="login" element={<Login />} />
           <Route path='traffic-controller/:ssn' element={<TrafficControllerWrapper/>}/>
@@ -82,13 +80,16 @@ class App extends Component {
           <Route path='airplaneDetailsSearch' element={<TrafficControllerAirplaneSearch/>}/>
           <Route path='admin' element={<Admin/>}/>
           <Route path='admin/:ssn' element={<AdminWrapper/>}/>
+
+          <Route path='add-expert/:ssn' element={<AddExpertController/>}/>
+
           <Route path = "/add-employee" elemeent = {<AddEmployeeComponent/>} ></Route>
           <Route path = "/add-employee/:ssn" element = {<AddEmployeeComponent/>}></Route>
           <Route path = "/airplanemodels" element = {<AddAirplaneModel/>}></Route>
           <Route path = "/experts" element = {<AddExpertController/>}></Route>
           <Route path = "/faatests" element = {<AddFAATestController/>}></Route>
           <Route path = "/planes" element = {<AddPlaneController/>}></Route>
-          <Route path = "/airplanemodels/:ssn" element = {<AddAirplaneModelWrapper/>}></Route>
+          <Route path = "/airplane_models/:ssn" element = {<AddAirplaneModelWrapper/>}></Route>
           <Route path = "/experts/:ssn" element = {<AddExpertControllerWrapper/>}></Route>
           <Route path = "/faatests/:ssn" element = {<AddFAATestControllerWrapper/>}></Route>
           <Route path = "/planes/:ssn" element = {<AddPlaneControllerWrapper/>}></Route>

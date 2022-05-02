@@ -4,14 +4,14 @@ import EmployeeService from '../services/EmployeeService'
 
 const AddEmployeeComponent = () => {
 
-    const [Ssn, setSsn] = useState('')
-    const [Email, setEmail] = useState('')
-    const [EName, setEName] = useState('')
-    const [Address, setAddress] = useState('')
-    const [Salary, setSalary] = useState('')
-    const [Union_mem_no, setUnionNo] = useState('')
-    const [Phone_no, setPhoneNo] = useState('')
-    const [ERole, setERole] = useState('')
+    const [ssn, setSsn] = useState('')
+    const [emailId, setEmail] = useState('')
+    const [ename, setEName] = useState('')
+    const [address, setAddress] = useState('')
+    const [salary, setSalary] = useState('')
+    const [unionNo, setUnionNo] = useState('')
+    const [phone, setPhoneNo] = useState('')
+    const [role, setERole] = useState('')
 
     const [employee, setEmployee] = useState([])
     
@@ -19,7 +19,7 @@ const AddEmployeeComponent = () => {
     const saveEmployee = (e) => {
         e.preventDefault();
 
-        const employee = {Ssn,Email, EName, Address, Salary, Union_mem_no, Phone_no, ERole}
+        const employee = {ssn, emailId, ename, address, salary, unionNo, phone, role}
 
      
             EmployeeService.createEmployee(employee).then((response) =>{
@@ -45,7 +45,7 @@ const AddEmployeeComponent = () => {
     const getAllEmployees = () => {
         EmployeeService.getAllEmployees().then((response) => {
             setEmployee(response.data)
-            console.log(response.data);
+            console.log("i am responseee: " +response.data);
         }).catch(error =>{
             console.log(error);
         })
@@ -82,9 +82,9 @@ const title2 = () => {
                                     <input
                                         type = "text"
                                         placeholder = "Enter SSN"
-                                        name = "SSN"
+                                        name = "ssn"
                                         className = "form-control"
-                                        value = {Ssn}
+                                        value = {ssn}
                                         onChange = {(e) => setSsn(e.target.value)}
                                     >
                                     </input>
@@ -94,9 +94,9 @@ const title2 = () => {
                                     <input
                                         type = "email"
                                         placeholder = "Enter email Id"
-                                        name = "Email"
+                                        name = "emailId"
                                         className = "form-control"
-                                        value = {Email}
+                                        value = {emailId}
                                         onChange = {(e) => setEmail(e.target.value)}
                                     >
                                     </input>
@@ -107,9 +107,9 @@ const title2 = () => {
                                     <input
                                         type = "text"
                                         placeholder = "Enter Name"
-                                        name = "EName"
+                                        name = "ename"
                                         className = "form-control"
-                                        value = {EName}
+                                        value = {ename}
                                         onChange = {(e) => setEName(e.target.value)}
                                     >
                                     </input>
@@ -120,9 +120,9 @@ const title2 = () => {
                                     <input
                                         type = "text"
                                         placeholder = "Enter Address"
-                                        name = "Address"
+                                        name = "address"
                                         className = "form-control"
-                                        value = {Address}
+                                        value = {address}
                                         onChange = {(e) => setAddress(e.target.value)}
                                     >
                                     </input>
@@ -135,9 +135,9 @@ const title2 = () => {
                                     <input
                                         type = "text"
                                         placeholder = "Enter Salary"
-                                        name = "Salary"
+                                        name = "salary"
                                         className = "form-control"
-                                        value = {Salary}
+                                        value = {salary}
                                         onChange = {(e) => setSalary(e.target.value)}
                                     >
                                     </input>
@@ -148,9 +148,9 @@ const title2 = () => {
                                     <input
                                         type = "text"
                                         placeholder = "Enter Union Mem No"
-                                        name = "Union_mem_no"
+                                        name = "unionNo"
                                         className = "form-control"
-                                        value = {Union_mem_no}
+                                        value = {unionNo}
                                         onChange = {(e) => setUnionNo(e.target.value)}
                                     >
                                     </input>
@@ -161,9 +161,9 @@ const title2 = () => {
                                     <input
                                         type = "text"
                                         placeholder = "Enter Phone Number"
-                                        name = "Phone_no"
+                                        name = "phone"
                                         className = "form-control"
-                                        value = {Phone_no}
+                                        value = {phone}
                                         onChange = {(e) => setPhoneNo(e.target.value)}
                                     >
                                     </input>
@@ -174,9 +174,9 @@ const title2 = () => {
                                     <input
                                         type = "text"
                                         placeholder = "Enter first name"
-                                        name = "ERole"
+                                        name = "role"
                                         className = "form-control"
-                                        value = {ERole}
+                                        value = {role}
                                         onChange = {(e) => setERole(e.target.value)}
                                     >
                                     </input>
@@ -198,13 +198,13 @@ const title2 = () => {
                                     <thead>
                                         <tr>
                                         
-                                        <th> SSN  </th>
-                                        <th> Email  </th>
-                                        <th> EName  </th>
-                                        <th> Address  </th>
-                                        <th> Salary  </th>
-                                        <th> Union No  </th>
-                                        <th> ERole  </th>
+                                        <th> ssn  </th>
+                                        <th> email  </th>
+                                        <th> eName  </th>
+                                        <th> address  </th>
+                                        <th> salary  </th>
+                                        <th> unionNo  </th>
+                                        <th> eRole  </th>
                     
                                        
                                         </tr>
@@ -214,14 +214,14 @@ const title2 = () => {
                                         {
                                             employee.map(
                                                 employee =>
-                                                <tr key = {employee.Ssn}> 
-                                                    <td> {employee.Ssn} </td>
-                                                    <td> {employee.Email} </td>
-                                                    <td> {employee.EName} </td>
-                                                    <td> {employee.Address} </td>
-                                                    <td> {employee.Salary} </td>
-                                                    <td> {employee.Union_mem_no} </td>
-                                                    <td> {employee.ERole} </td>
+                                                <tr key = {employee.ssn}> 
+                                                    <td> {employee.ssn} </td>
+                                                    <td> {employee.emailId} </td>
+                                                    <td> {employee.ename} </td>
+                                                    <td> {employee.address} </td>
+                                                    <td> {employee.salary} </td>
+                                                    <td> {employee.unionNo} </td>
+                                                    <td> {employee.role} </td>
                                                     
                                                     
                                                 </tr>

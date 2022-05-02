@@ -4,7 +4,7 @@ import ExpertService from '../services/ExpertService'
 
 const AddExpertController = () => {
 
-    const [Model_no, setModelNo] = useState('')
+    const [modelNo, setModelNo] = useState('')
     const [ssn, setSsn] = useState('')
     
     const [expert, setExpert] = useState([])
@@ -13,10 +13,10 @@ const AddExpertController = () => {
     const saveExpert = (e) => {
         e.preventDefault();
 
-        const Expert = {Model_no, ssn}
+        const Expert = {modelNo, ssn}
 
         
-        ExpertService.createModel(Expert).then((response) =>{
+        ExpertService.createExpert(Expert).then((response) =>{
 
             console.log(response.data)
             getAllExperts()
@@ -74,9 +74,9 @@ const title2 = () => {
                                     <input
                                         type = "email"
                                         placeholder = "Enter Modle No"
-                                        name = "Model_no"
+                                        name = "modelNo"
                                         className = "form-control"
-                                        value = {Model_no}
+                                        value = {modelNo}
                                         onChange = {(e) => setModelNo(e.target.value)}
                                     >
                                     </input>
@@ -125,11 +125,9 @@ const title2 = () => {
                                         {
                                             expert.map(
                                                 expert =>
-                                                <tr key = {expert.Model_no}> 
-                                                    <td> {expert.Model_no} </td>
+                                                <tr key = {expert.modelNo}> 
+                                                    <td> {expert.modelNo} </td>
                                                     <td> {expert.ssn} </td>
-                                                
-                                                    
                                                     
                                                 </tr>
                                             )

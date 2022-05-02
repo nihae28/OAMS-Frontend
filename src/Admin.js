@@ -58,7 +58,7 @@ export default class Admin extends Component {
     }
     navigateToAddExpert = (e) => {
         e.preventDefault();
-        window.location.href = `/Expert/${this.props.match.params.ssn}`;
+        window.location.href = `/add-expert/${this.props.match.params.ssn}`;
     }
     navigateToAddFAATest = (e) => {
         e.preventDefault();

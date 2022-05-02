@@ -4,9 +4,9 @@ import FAATestService from '../services/FAATestService'
 
 const AddFAATestController = () => {
 
-    const [FAA_no, setFAANo] = useState('')
-    const [Tname, setTName] = useState('')
-    const [max_score, setMaxScore] = useState('')
+    const [faaNo, setFAANo] = useState('')
+    const [tname, setTName] = useState('')
+    const [maxScore, setMaxScore] = useState('')
     
     const [faa_test, setFAATest] = useState([])
 
@@ -14,7 +14,7 @@ const AddFAATestController = () => {
     const saveFAATest = (e) => {
         e.preventDefault();
 
-        const faa_test = {FAA_no, Tname, max_score}
+        const faa_test = {faaNo, tname, maxScore}
 
     
         FAATestService.createFAATest(faa_test).then((response) =>{
@@ -76,9 +76,9 @@ const title2 = () => {
                                     <input
                                         type = "text"
                                         placeholder = "Enter Modle No"
-                                        name = "FAA_no"
+                                        name = "faaNo"
                                         className = "form-control"
-                                        value = {FAA_no}
+                                        value = {faaNo}
                                         onChange = {(e) => setFAANo(e.target.value)}
                                     >
                                     </input>
@@ -89,9 +89,9 @@ const title2 = () => {
                                     <input
                                         type = "text"
                                         placeholder = "Enter Test Name"
-                                        name = "TName"
+                                        name = "tname"
                                         className = "form-control"
-                                        value = {Tname}
+                                        value = {tname}
                                         onChange = {(e) => setTName(e.target.value)}
                                     >
                                     </input>
@@ -102,9 +102,9 @@ const title2 = () => {
                                     <input
                                         type = "text"
                                         placeholder = "Enter Max Score"
-                                        name = "max_score"
+                                        name = "maxScore"
                                         className = "form-control"
-                                        value = {max_score}
+                                        value = {maxScore}
                                         onChange = {(e) => setMaxScore(e.target.value)}
                                     >
                                     </input>
@@ -128,7 +128,7 @@ const title2 = () => {
                         <table className="table table-bordered table-striped">
                                     <thead>
                                         <tr>
-                                        <th> FAA Number </th>
+                                        <th> FAA Test </th>
                                         <th> Test Name  </th>
                                         <th> Max Score  </th>
                     
@@ -140,10 +140,10 @@ const title2 = () => {
                                         {
                                             faa_test.map(
                                                 faa_test =>
-                                                <tr key = {faa_test.FAA_no}> 
-                                                    <td> {faa_test.FAA_no} </td>
-                                                    <td> {faa_test.Tname} </td>
-                                                    <td> {faa_test.max_score} </td>
+                                                <tr key = {faa_test.faaNo}> 
+                                                    <td> {faa_test.faaNo} </td>
+                                                    <td> {faa_test.tname} </td>
+                                                    <td> {faa_test.maxScore} </td>
                                                 
                                                     
                                                     
