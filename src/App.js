@@ -6,7 +6,7 @@ import TrafficControllerExamDetails from './TrafficControllerExamDetails';
 import TrafficControllerAirplaneSearch from './TrafficControllerAirplaneSearch';
 import FooterComponent from './components/FooterComponent';
 import HeaderComponent from './components/HeaderComponent';
-
+import Test_info from './components/Test_info';
 import AddEmployeeComponent from './components/AddEmployeeComponent';
 import AddAirplaneModel from './components/AddAirplaneModel';
 import AddExpertController from './components/AddExpertController';
@@ -53,7 +53,8 @@ class App extends Component {
            <HeaderComponent />
         <Routes>
           <Route path="user" element={<Test />} />
-          <Route path="login" element={<Login />} /><Route path='traffic-controller/:ssn' element={<TrafficControllerWrapper/>}/>
+          <Route path="login" element={<Login />} />
+          <Route path='traffic-controller/:ssn' element={<TrafficControllerWrapper/>}/>
           <Route path='trafficControllerExamDetails/:ssn' element={<TrafficControllerExamDetailsWrapper/>}/>
           <Route path='airplaneDetailsSearch/:ssn' element={<TrafficControllerAirplaneSearchWrapper/>}/>
           <Route path = 'techniciandetails/:ssn' element={<TechnicianWrapper/>}/>
@@ -69,6 +70,7 @@ class App extends Component {
           <Route path = "/experts" element = {<AddExpertController/>}></Route>
           <Route path = "/faatests" element = {<AddFAATestController/>}></Route>
           <Route path = "/planes" element = {<AddPlaneController/>}></Route>
+          <Route path = "/testinfo/" element = {<Test_info/>}></Route>
           <Route path="/" element={<Login />} />
         </Routes>
            <FooterComponent />
