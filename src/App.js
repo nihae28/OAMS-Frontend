@@ -2,6 +2,7 @@ import React, { Component, } from 'react';
 import {Route, Routes, BrowserRouter, useParams} from 'react-router-dom';
 import '.././node_modules/bootstrap/dist/css/bootstrap.min.css';
 import TrafficController from './TrafficController';
+import Home from './Home';
 import TrafficControllerExamDetails from './TrafficControllerExamDetails';
 import TrafficControllerAirplaneSearch from './TrafficControllerAirplaneSearch';
 import FooterComponent from './components/FooterComponent';
@@ -44,6 +45,7 @@ class App extends Component {
        <BrowserRouter>
            <HeaderComponent />
         <Routes>
+          <Route path='home' element={<Home/>}/>
           <Route path="user" element={<Test />} />
           <Route path="login" element={<Login />} /><Route path='traffic-controller/:ssn' element={<TrafficControllerWrapper/>}/>
           <Route path='trafficControllerExamDetails/:ssn' element={<TrafficControllerExamDetailsWrapper/>}/>
