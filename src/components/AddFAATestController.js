@@ -75,7 +75,7 @@ const title2 = () => {
                                     <label className = "form-label"> FAA No :</label>
                                     <input
                                         type = "text"
-                                        placeholder = "Enter Modle No"
+                                        placeholder = "Enter FAA test no"
                                         name = "faaNo"
                                         className = "form-control"
                                         value = {faaNo}
