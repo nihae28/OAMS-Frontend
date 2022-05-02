@@ -1,6 +1,20 @@
-import React from 'react'
+import React, { Component } from 'react';
+import Auth from '../services/Auth';
 
-const HeaderComponent = () => {
+let auth = new Auth();
+
+export default class Navbar extends Component {
+
+    constructor(){
+        super();
+    };
+
+    logout(){
+        auth.logout();
+        window.location.href = "/login";
+    }
+
+render() {
     return (
         <div>
             <header>
@@ -9,11 +23,16 @@ const HeaderComponent = () => {
                         <a href = "#" className = "navbar-brand">
                             Online Airport Management
                         </a>
+
+                         <button onClick={this.logout } className="ml-auto nav-link">         
+                        logout
+                        </button>
                     </div>
+
+               
                 </nav>
             </header>
         </div>
-    )
+    );
 }
-
-export default HeaderComponent
+}
