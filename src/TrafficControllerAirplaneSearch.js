@@ -40,6 +40,7 @@ export default class TrafficControllerAirplaneSearch extends React.Component {
                         <th>Model Number</th>
                         <th>Capacity</th>
                         <th>Weight</th>
+                        <th>Max score</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -59,6 +60,7 @@ export default class TrafficControllerAirplaneSearch extends React.Component {
             <td>{plane.modelNo}</td>
             <td>{plane.capacity}</td>
             <td>{plane.weight}</td>
+            <td>{plane.maxscore}</td>
         </tr>
         )
         return listItems;
